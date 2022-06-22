@@ -11,6 +11,7 @@ async function postBlogHandler(req, h) {
     const id = uuidv1(16);
     const created = new Date().toISOString();
     const updated = created;
+    console.log("data", req.payload);
 
     const query = {
       text: `INSERT INTO blogs VALUES ($1, $2, $3, $4, $5,$6) RETURNING id`,
